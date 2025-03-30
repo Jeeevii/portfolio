@@ -19,7 +19,7 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
     {
       title: "UCSC SlugRush Gym Tracker",
       description:
-        "A simple web app for UCSC students to track gym crowd levels. Frontend built with Next.js, backend running on Python, and a PostgresSQL database running on Supabase.",
+        "A full stack web app for UCSC students to track gym crowd levels. Frontend built with Next.js, backend running on Python, and a PostgresSQL database running on Supabase.",
       technologies: ["Next.js", "Vercel", "Python", "FastAPI", "Render", "Supabase", "PostgreSQL"],
       githubLink: "https://github.com/Jeeevii/SlugRush",
       demoLink: "https://github.com/Jeeevii/SlugRush",
@@ -35,12 +35,12 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
       image: "/placeholder.svg?height=300&width=600",
     },
     {
-      title: "Microservice Architecture",
+      title: "WP.GG (Riot Stats Checker)",
       description:
-        "A demonstration of microservice architecture using Spring Boot, with service discovery, API gateway, and message queues.",
-      technologies: ["Java", "Spring Boot", "RabbitMQ", "Docker", "Kubernetes"],
-      githubLink: "https://github.com",
-      demoLink: "https://demo.com",
+        "A simple full-stack project which uses the Riot's Public API to access user data, such as win rate, champion pool, match data, etc. Frontend built with HTML/CSS and Javascrip and a backend running on Node.js.",
+      technologies: ["Node.js", "HTML/CSS", "Express", "Firebase"],
+      githubLink: "https://github.com/Jeeevii/RiotStatsChecker",
+      demoLink: "https://wpgg-6f4e2.web.app/index.html",
       image: "/placeholder.svg?height=300&width=600",
     },
     {

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -26,17 +27,17 @@ const About: React.FC<AboutProps> = () => {
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-4">
         <p className="text-zinc-400">
-          Hello, I'm a Computer Science student at UC Santa Cruz, graduating in June 2025. I'm very passionate about building full-stack applications from the ground up, with a particular focus on backend development. 
-          I enjoy working with server interactions, APIs, and databases to create scalable and efficient systems, and I love the challenge of turning complex problems into well-structured solutions.
+          Hello! I'm a Computer Science student at UC Santa Cruz, graduating in June 2025. I love building full-stack applications from the ground up, but my real passion is in backend development. I enjoy working with APIs, databases, and server logic to create scalable, efficient systems. 
+          There's just something exciting about breaking down complex problems and turning them into clean, well-structured solutions (could be OCD too).
         </p>
         <p className="text-zinc-400">
-          I'm actively seeking entry-level software engineering roles or internships to continue expanding my skills and grow as a developer. 
-          I thrive in environments where I can learn, collaborate, and make meaningful contributions while building real-world applications. 
-          Whether it's crafting the perfect backend or getting the frontend just right, I enjoy creating seamless, user-centered experiences.
+          Right now, I'm looking for entry-level software engineering roles or internships where I can continue learning, collaborating, and building real-world applications. 
+          I thrive in environments where I can be direct and get things done without sugar-coating the challenges. 
+          Whether it’s optimizing backend performance or troubleshooting issues across the stack, I’m all about finding practical solutions that get results.
         </p>
         <p className="text-zinc-400">
-          Outside of coding, I'm an avid basketball player, gym-goer, and fisherman. I also love playing games with friends and, of course, solving leetcode problems... 
-          I'm always up for new challenges, whether it's on the court, in the code, or in life.
+          Outside of coding, you’ll probably find me on the basketball court, at the gym, or out fishing. I also love gaming with friends and solving leetcode problems...because what’s more fun than debugging at 2 AM? 
+          Powered by too much caffeine and an unhealthy love for White Monster, I’m always up for a challenge, whether it’s in code, competition, or life.
         </p>
         </div>
         <div className="relative h-80 w-full rounded-lg overflow-hidden border border-zinc-800">

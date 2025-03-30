@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -26,9 +27,9 @@ const Hero: React.FC<HeroProps> = () => {
           <span className="text-zinc-300">Jeevithan Mahenthran</span>
         </h1>
         <p className="text-2xl md:text-3xl text-zinc-400 mb-8">Backend Developer & Full Stack Engineer</p>
-        <p className="text-xl text-zinc-500 mb-12 max-w-2xl mx-auto">
-          Passionate about backend development, specialized in building robust and scalable backend systems, while also developing full-stack applications. 
-        </p>
+          <p className="text-xl text-zinc-500 mb-12 max-w-2xl mx-auto">
+            Hey, I'm a CS student at UC Santa Cruz passionate about building full-stack apps with focus on backend development, seeking entry-level roles and internships to grow and build impactful systems.
+          </p>
         <div
           className={cn(
             "flex justify-center space-x-8 mb-12 opacity-0 transform translate-y-10 transition-all duration-1000 ease-out delay-300",
