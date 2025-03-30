@@ -23,6 +23,9 @@ const Navbar: React.FC<NavbarProps> = () => {
           <Link href="#projects" className="text-zinc-400 hover:text-zinc-100 transition-colors">
             Projects
           </Link>
+          <Link href="https://mail.google.com/mail/?view=cm&fs=1&to=jeevithanmahenthran@gmail.com" className="text-zinc-400 hover:text-zinc-100 transition-colors" target="_blank" rel="noopener noreferrer">
+            Contact
+          </Link>
           <Link href="/docs/resume.pdf" target="_blank" rel="noopener noreferrer">
             <Button className="bg-zinc-700 hover:bg-zinc-600 text-zinc-100" style={{ cursor: 'pointer' }}>Resume</Button>
           </Link>

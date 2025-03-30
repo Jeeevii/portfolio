@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Github, Linkedin, FileText } from "lucide-react";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {

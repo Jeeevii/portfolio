@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface AboutProps {}
 
 const About: React.FC<AboutProps> = () => {
@@ -34,7 +35,7 @@ const About: React.FC<AboutProps> = () => {
           Whether it's crafting the perfect backend or getting the frontend just right, I enjoy creating seamless, user-centered experiences.
         </p>
         <p className="text-zinc-400">
-          Outside of coding, I'm an avid basketball player, gym-goer, and fisherman. I also love playing games with friends and, of course, solving LeetCode problems (because who doesn’t enjoy a good brain workout??). 
+          Outside of coding, I'm an avid basketball player, gym-goer, and fisherman. I also love playing games with friends and, of course, solving leetcode problems... 
           I'm always up for new challenges, whether it's on the court, in the code, or in life.
         </p>
         </div>

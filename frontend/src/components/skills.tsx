@@ -1,13 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState, useEffect } from "react";
-import { Server, Database, Cloud, LayoutGrid, Terminal, Settings } from "lucide-react";
+import { Server, Database, PanelTop, Terminal, Gamepad, Bot } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { getIcons } from "@/lib/icons";
 
-interface SkillsProps {}
-
-const Skills: React.FC<SkillsProps> = () => {
+const Skills = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -16,70 +14,34 @@ const Skills: React.FC<SkillsProps> = () => {
 
   const skillCategories = [
     {
+      title: "Frontend Development",
+      icon: <PanelTop className="h-5 w-5" />, 
+      skills: ["Next.js", "React", "Angular", "Tailwind CSS", "Figma"],
+    },
+    {
       title: "Backend Development",
-      icon: <Server className="h-5 w-5" />,
-      skills: [
-        { name: "Node.js", icon: "/icons/nodejs.svg" },
-        { name: "Express", icon: "/icons/express.svg" },
-        { name: "Python", icon: "/icons/python.svg" },
-        { name: "Django", icon: "/icons/django.svg" },
-        { name: "Java", icon: "/icons/java.svg" },
-        { name: "Spring Boot", icon: "/icons/spring.svg" },
-      ],
+      icon: <Server className="h-5 w-5" />, 
+      skills: ["Node.js", "Flask", "Python", "C/C++"],
     },
     {
-      title: "Databases",
-      icon: <Database className="h-5 w-5" />,
-      skills: [
-        { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
-        { name: "MongoDB", icon: "/icons/mongodb.svg" },
-        { name: "MySQL", icon: "/icons/mysql.svg" },
-        { name: "Redis", icon: "/icons/redis.svg" },
-        { name: "Elasticsearch", icon: "/icons/elasticsearch.svg" },
-      ],
+      title: "Databases & Cloud",
+      icon: <Database className="h-5 w-5" />, 
+      skills: ["PostgreSQL", "Firebase", "Supabase", "Vercel", "Docker"],
     },
     {
-      title: "DevOps & Cloud",
-      icon: <Cloud className="h-5 w-5" />,
-      skills: [
-        { name: "Docker", icon: "/icons/docker.svg" },
-        { name: "Kubernetes", icon: "/icons/kubernetes.svg" },
-        { name: "AWS", icon: "/icons/aws.svg" },
-        { name: "CI/CD", icon: "/icons/cicd.svg" },
-        { name: "Terraform", icon: "/icons/terraform.svg" },
-      ],
+      title: "AI & ML Development",
+      icon: <Bot  className="h-5 w-5" />, 
+      skills: ["LangChain", "LlamaIndex",, "NumPy", "CARLA", "Scenic"],
     },
     {
-      title: "Frontend",
-      icon: <LayoutGrid className="h-5 w-5" />,
-      skills: [
-        { name: "React", icon: "/icons/react.svg" },
-        { name: "TypeScript", icon: "/icons/typescript.svg" },
-        { name: "HTML/CSS", icon: "/icons/html5.svg" },
-        { name: "Next.js", icon: "/icons/nextjs.svg" },
-        { name: "Tailwind CSS", icon: "/icons/tailwind.svg" },
-      ],
+      title: "OS & Networking",
+      icon: <Terminal className="h-5 w-5" />, 
+      skills: [ "Mininet", "Git", "Linux", "WireShark", "Bash"],
     },
     {
-      title: "Tools & Methods",
-      icon: <Terminal className="h-5 w-5" />,
-      skills: [
-        { name: "Git", icon: "/icons/git.svg" },
-        { name: "RESTful APIs", icon: "/icons/api.svg" },
-        { name: "GraphQL", icon: "/icons/graphql.svg" },
-        { name: "Microservices", icon: "/icons/microservices.svg" },
-        { name: "Agile", icon: "/icons/agile.svg" },
-      ],
-    },
-    {
-      title: "Other",
-      icon: <Settings className="h-5 w-5" />,
-      skills: [
-        { name: "System Design", icon: "/icons/system-design.svg" },
-        { name: "Performance", icon: "/icons/performance.svg" },
-        { name: "Security", icon: "/icons/security.svg" },
-        { name: "Testing", icon: "/icons/testing.svg" },
-      ],
+      title: "Game Development",
+      icon: <Gamepad className="h-5 w-5" />, 
+      skills: ["Unity", "Phaser", "Photon", "C#", "Typescript"],
     },
   ];
 
@@ -109,9 +71,9 @@ const Skills: React.FC<SkillsProps> = () => {
                   className="flex flex-col items-center bg-zinc-700/50 rounded-lg p-3 hover:bg-zinc-700 transition-colors"
                 >
                   <div className="w-10 h-10 flex items-center justify-center mb-2">
-                    {getIcons(skill.name)}
+                    <img src={`/icons/${skill.toLowerCase().replace(/[^a-z0-9]/g, "")}.svg`} alt={skill} className="w-8 h-8" />
                   </div>
-                  <span className="text-sm text-zinc-300 text-center">{skill.name}</span>
+                  <span className="text-sm text-zinc-300 text-center">{skill}</span>
                 </div>
               ))}
             </div>

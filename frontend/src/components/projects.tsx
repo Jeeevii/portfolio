@@ -17,7 +17,7 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
 
   const projects = [
     {
-      title: "SlugRush Gym Tracker",
+      title: "UCSC SlugRush Gym Tracker",
       description:
         "A simple web app for UCSC students to track gym crowd levels. Frontend built with Next.js, backend running on Python, and a PostgresSQL database running on Supabase.",
       technologies: ["Next.js", "Vercel", "Python", "FastAPI", "Render", "Supabase", "PostgreSQL"],
@@ -98,14 +98,14 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
                     </div>
                     <div className="flex space-x-3">
                       <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                        <Button variant="outline" className="border-zinc-700 text-zinc-300 bg-black hover:bg-zinc-700">
+                        <Button variant="outline" className="border-zinc-700 text-zinc-300 bg-black hover:bg-zinc-700" style={{ cursor: 'pointer' }}>
                           <Github className="h-4 w-4 mr-2" />
                           Code
                         </Button>
                       </Link>
                       {project.demoLink && (
                         <Link href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                          <Button variant="outline" className="border-zinc-700 text-zinc-300 bg-black hover:bg-zinc-700">
+                          <Button variant="outline" className="border-zinc-700 text-zinc-300 bg-black hover:bg-zinc-700" style={{ cursor: 'pointer' }}>
                             <ExternalLink className="h-4 w-4 mr-2" />
                             Demo
                           </Button>
