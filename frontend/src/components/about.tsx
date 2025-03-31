@@ -28,11 +28,11 @@ const About: React.FC<AboutProps> = () => {
         <div className="space-y-4">
         <p className="text-zinc-400">
           Hello! I'm a Computer Science student at UC Santa Cruz, graduating in June 2025. I love building full-stack applications from the ground up, but my real passion is in backend development. I enjoy working with APIs, databases, and server logic to create scalable, efficient systems. 
-          There's just something exciting about breaking down complex problems and turning them into clean, well-structured solutions (could be OCD too).
+          There's just something exciting about breaking down complex problems and turning them into clean, well-structured solutions (could be my OCD too).
         </p>
         <p className="text-zinc-400">
           Right now, I'm looking for entry-level software engineering roles or internships where I can continue learning, collaborating, and building real-world applications. 
-          I thrive in environments where I can be direct and get things done without sugar-coating the challenges. 
+          I thrive in environments where I can get direct feedback to get things done without sugar-coating the challenges. 
           Whether it’s optimizing backend performance or troubleshooting issues across the stack, I’m all about finding practical solutions that get results.
         </p>
         <p className="text-zinc-400">

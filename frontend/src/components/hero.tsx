@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import  EncryptButton from "@/components/ui/encryptbutton"
 import { cn } from "@/lib/utils";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = () => {
         </h1>
         <p className="text-2xl md:text-3xl text-zinc-400 mb-8">Backend Developer & Full Stack Engineer</p>
           <p className="text-xl text-zinc-500 mb-12 max-w-2xl mx-auto">
-            Hey, I'm a CS student at UC Santa Cruz passionate about building full-stack apps with focus on backend development, seeking entry-level roles and internships to grow and build impactful systems.
+            Hey, I'm a CS student at UC Santa Cruz who loves building full-stack apps with focus on backend development, seeking entry-level roles and internships to grow and build impactful systems.
           </p>
         <div
           className={cn(
@@ -84,9 +84,9 @@ const Hero: React.FC<HeroProps> = () => {
             </div>
           </Link>
         </div>
-        <Link href="#projects" rel="noopener noreferrer">
-        <Button className="bg-zinc-700 hover:bg-zinc-600 text-zinc-100" style={{ cursor: 'pointer' }}>View My Work</Button>
-        </Link>
+          <Link href="#projects" rel="noopener noreferrer" >
+            <EncryptButton />
+          </Link>
       </div>
     </section>
   );
