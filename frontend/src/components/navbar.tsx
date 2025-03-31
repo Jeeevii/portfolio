@@ -10,7 +10,7 @@ const Navbar: React.FC<NavbarProps> = () => {
   return (
     <header className="fixed top-0 w-full bg-zinc-900/80 backdrop-blur-sm z-50 border-b border-zinc-800">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold tracking-tighter">
+        <Link href="#home" className="text-xl font-bold tracking-tighter">
           {/* <img src="/gif/jeevi_logo_test.gif" alt="Jeevi Logo" className="h-8 w-auto align-middle"></img> */}
           <span className="text-zinc-300">J</span>
           <span className="text-zinc-500">M</span>

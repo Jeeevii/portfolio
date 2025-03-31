@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import  EncryptButton from "@/components/ui/encryptbutton"
+import  DecryptButton from "@/components/ui/decryptButton"
 import { cn } from "@/lib/utils";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
@@ -85,7 +85,7 @@ const Hero: React.FC<HeroProps> = () => {
           </Link>
         </div>
           <Link href="#projects" rel="noopener noreferrer" >
-            <EncryptButton />
+            <DecryptButton />
           </Link>
       </div>
     </section>

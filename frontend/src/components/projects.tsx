@@ -99,10 +99,10 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
     {
       title: "UCSC SlugRush Gym Tracker",
       description:
-        "A full stack web app for UCSC students to track gym crowd levels. Frontend built with Next.js, backend running on Python, and a PostgresSQL database running on Supabase.",
+        "A full stack web app for UCSC students to track gym crowd levels. Frontend built with Next.js and Tailwind CSS, backend running on FastAPI, and a PostgresSQL database running on Supabase.",
       technologies: ["Next.js", "Vercel", "Python", "FastAPI", "Render", "Supabase", "PostgreSQL"],
       githubLink: "https://github.com/Jeeevii/SlugRush",
-      demoLink: "https://github.com/Jeeevii/SlugRush",
+      demoLink: "N/A",
       images: [
         { src: "/projects/slugrush.png", alt: "SlugRush Daily View" },
         { src: "/projects/slugrush2.png", alt: "SlugRush Weekly View" },
@@ -115,7 +115,7 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
         "A full-stack task management application with real-time updates. Backend built with Django REST Framework and frontend with React.",
       technologies: ["Python", "Django", "PostgreSQL", "React", "WebSockets"],
       githubLink: "https://github.com",
-      demoLink: "https://demo.com",
+      demoLink: "N/A",
       images: [
         { src: "/placeholder.svg?height=300&width=600", alt: "Task Management System" },
         { src: "/placeholder.svg?height=300&width=600&text=Dashboard", alt: "Task Management Dashboard" },
@@ -141,7 +141,7 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
         "A scalable chat application with real-time messaging, user presence, and message history. Built with Node.js and Socket.io.",
       technologies: ["Node.js", "Socket.io", "Redis", "React", "MongoDB"],
       githubLink: "https://github.com",
-      demoLink: "https://demo.com",
+      demoLink: "N/A",
       images: [
         { src: "/placeholder.svg?height=300&width=600", alt: "Chat Application" },
         { src: "/placeholder.svg?height=300&width=600&text=Chat+Room", alt: "Chat Room" },
@@ -180,12 +180,13 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
                   <div className="bg-zinc-800/50 border border-zinc-700 rounded-lg overflow-hidden">
                     <div className="relative h-48 w-full cursor-pointer group" onClick={() => openLightbox(index, 0)}>
                       <Image
-                        src={project.images[0].src || "/placeholder.svg"}
+                        src={project.images[0].src}
                         alt={project.images[0].alt}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                      {/* THUMBNAIL COVER */}
+                      <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
                         <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 px-3 py-1 rounded-md text-sm">
                           Click To View
                         </span>
@@ -214,7 +215,7 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
                             Code
                           </Button>
                         </Link>
-                        {project.demoLink && (
+                        {project.demoLink && project.demoLink !== "N/A" ? (
                           <Link href={project.demoLink} target="_blank" rel="noopener noreferrer">
                             <Button
                               variant="outline"
@@ -225,6 +226,15 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
                               Demo
                             </Button>
                           </Link>
+                        ) : (
+                          <Button
+                            variant="outline"
+                            className="border-zinc-700 text-zinc-500 bg-black opacity-50 cursor-not-allowed"
+                            disabled
+                          >
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            Demo
+                          </Button>
                         )}
                       </div>
                     </div>
@@ -292,7 +302,7 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
             <div className="bg-zinc-900 rounded-b-lg p-4 flex items-center justify-center relative">
               {/* Main image */}
               <img
-                src={projects[currentProjectIndex].images[currentImageIndex].src || "/placeholder.svg"}
+                src={projects[currentProjectIndex].images[currentImageIndex].src}
                 alt={projects[currentProjectIndex].images[currentImageIndex].alt}
                 className="max-w-full max-h-[75vh] object-contain"
                 style={{ margin: "auto" }}
@@ -340,7 +350,7 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
                     }}
                   >
                     <img
-                      src={image.src || "/placeholder.svg"}
+                      src={image.src}
                       alt={`Thumbnail ${idx + 1}`}
                       className="w-full h-full object-cover"
                     />
@@ -348,6 +358,7 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
                 ))}
               </div>
             )}
+            
           </div>
         </div>
       )}
