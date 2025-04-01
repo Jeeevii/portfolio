@@ -32,12 +32,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbox }) =>
       )
     } else {
       return (
-        <div className="h-full w-full bg-zinc-800 flex items-center justify-center relative">
+        <div className="h-full w-full bg-zinc-800 flex items-end justify-center relative">
           <Image
             src={firstMedia.src}
             alt={firstMedia.alt}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
           />
           <span className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
             Image

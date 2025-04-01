@@ -43,12 +43,12 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
           type: "video",
         },
         {
-          src: "/projects/Graphifier Script.png",
+          src: "/projects/cse233Graphifier.png",
           alt: "Visual Representation of Falsification",
           type: "image",
         },
         {
-          src: "/projects/CARLA Crash.png",
+          src: "/projects/carlaCrash.png",
           alt: "Carla Violation",
           type: "image",
         },
@@ -67,9 +67,9 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
           alt: "Body & Soul Offical Trailer",
           type: "video",
         },
-        { src: "/projects/MainPhase.png", alt: "Main Screen", type: "image" },
-        { src: "/projects/CombatPhase.png", alt: "Combat Phase", type: "image" },
-        { src: "/projects/UpgradePhase.png", alt: "Upgrade Phase", type: "image" },
+        { src: "/projects/mainPhase.png", alt: "Main Screen", type: "image" },
+        { src: "/projects/combatPhase.png", alt: "Combat Phase", type: "image" },
+        { src: "/projects/upgradePhase.png", alt: "Upgrade Phase", type: "image" },
       ],
     },
     {
@@ -81,12 +81,12 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
       demoLink: "N/A",
       media: [
         {
-          src: "/projects/slugrush.png",
+          src: "/projects/slugRush.png",
           alt: "SlugRush Daily View",
           type: "image",
         },
         {
-          src: "/projects/slugrush2.png",
+          src: "/projects/slugRush2.png",
           alt: "SlugRush Weekly View",
           type: "image",
         },
@@ -95,13 +95,13 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
     {
       title: "WP.GG (Riot Stats Checker)",
       description:
-        "A simple full-stack project which uses Riot Game's Public API to access user data, such as win rate, champion mastery, match data, etc. Frontend built with HTML/CSS, Javascript and a backend running on Node.js.",
-      technologies: ["Node.js", "HTML/CSS", "Javascript", "Firebase"],
+        "A simple full-stack project which uses Riot Game's Public API to access user data, such as win rate, champion mastery, match data, etc. Built with HTML/CSS and Express.js, with the backend hosted on Firebase. Unfortunately, the Riot Games API documentation has been updated, and our version is no longer compatible with the latest changes.",
+      technologies: ["Node.js", "HTML/CSS", "Express.js", "Firebase"],
       githubLink: "https://github.com/Jeeevii/RiotStatsChecker",
       demoLink: "https://wpgg-6f4e2.web.app/index.html",
       media: [
         { src: "/projects/wpggMain.png", alt: "WP.GG Main Interface", type: "image" },
-        { src: "/project/wpggStats.png", alt: "WP.GG Stats Page", type: "image" },
+        { src: "/projects/wpggStats.png", alt: "WP.GG Stats Page", type: "image" },
       ],
     },
   ]
