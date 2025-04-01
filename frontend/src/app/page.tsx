@@ -3,7 +3,7 @@ import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import About from "@/components/about";
 import Skills from "@/components/skills";
-import Projects from "@/components/projects";
+import Projects from "@/components/projects/projects";
 import Footer from "@/components/footer";
 import { useState, useEffect } from "react";
 

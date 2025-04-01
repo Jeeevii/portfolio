@@ -1,5 +1,3 @@
-// Source Code Referenced from Encrypt Button at: https://www.hover.dev/components/buttons 
-
 "use client"
 import { useRef, useState, useEffect } from "react";
 import { FaLaptopCode } from "react-icons/fa";
@@ -12,10 +10,15 @@ const CHARS = "!@#$%^&*():{};|,.<>/?";
 
 const DecryptButton = () => {
   const intervalRef = useRef(null);
-  const [text, setText] = useState(() => {
-    return TARGET_TEXT.split("").map(() => CHARS[Math.floor(Math.random() * CHARS.length)]).join("");
-  });
+  const [text, setText] = useState(TARGET_TEXT);
   const [decrypted, setDecrypted] = useState(false);
+
+  // ReactHydration Error -> random characters only render on the client now
+  useEffect(() => {
+    setText(
+      TARGET_TEXT.split("").map(() => CHARS[Math.floor(Math.random() * CHARS.length)]).join("")
+    );
+  }, []);
 
   useEffect(() => {
     return () => clearInterval(intervalRef.current);
@@ -52,6 +55,7 @@ const DecryptButton = () => {
         <FaLaptopCode />
         <span>{text}</span>
       </div>
+
       {/*Scanning Animation */}
       {/* <motion.span
         initial={{
@@ -68,6 +72,7 @@ const DecryptButton = () => {
         }}
         className="duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-indigo-400/0 from-40% via-indigo-400/100 to-indigo-400/0 to-60% opacity-0 transition-opacity group-hover:opacity-100"
       /> */}
+      
     </motion.button>
   );
 };
