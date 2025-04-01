@@ -35,7 +35,7 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
         "Research utilizing the CARLA driving simulator running on WSL for conducting autonomous vehicle testing. We focused on determining which initial parameters, such as speed and distance between the ego vehicle and the driving stack, led to the most violations and crashes. Additionally, introduced ChatScene, an LLM focused on creating scenarios to generate custom Scenic scripts for running targeted safety tests.",
       technologies: ["Python", "CARLA", "Scenic", "VerifAI", "ChatScene"],
       githubLink: "https://github.com/Jeeevii/cse233_acc_verifai",
-      demoLink: "/docs/Falsification of Automous Driving Stacks Final Report.pdf",
+      demoLink: "/docs/cse233_final_report.pdf",
       media: [
         { 
           src: "/REPLACE", 
