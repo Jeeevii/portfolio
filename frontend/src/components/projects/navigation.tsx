@@ -5,7 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import type { Project } from "@/lib/project"
+import type { Project } from "@/lib/projectTypes"
 import ProjectCard from "./cards"
 
 interface ProjectCarouselProps {

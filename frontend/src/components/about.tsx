@@ -41,7 +41,7 @@ const About: React.FC<AboutProps> = () => {
         </p>
         </div>
         <div className="relative h-80 w-full rounded-lg overflow-hidden border border-zinc-800">
-          <Image src="/picture.svg?height=400&width=400" alt="Developer portrait" fill className="object-cover" />
+          <Image src="/selfPhoto.png" alt="Developer portrait" fill className="object-cover" />
         </div>
       </div>
     </section>

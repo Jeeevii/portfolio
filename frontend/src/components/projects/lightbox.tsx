@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import type React from "react"
@@ -5,7 +6,8 @@ import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import type { Project } from "@/lib/project"
+import type { Project } from "@/lib/projectTypes"
+import YouTubeEmbed from "./youtube"
 
 interface ProjectLightboxProps {
   isOpen: boolean
@@ -17,7 +19,6 @@ interface ProjectLightboxProps {
 const ProjectLightbox: React.FC<ProjectLightboxProps> = ({ isOpen, onClose, project, initialMediaIndex = 0 }) => {
   const [currentMediaIndex, setCurrentMediaIndex] = useState(initialMediaIndex)
   const modalRef = useRef<HTMLDivElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     setCurrentMediaIndex(initialMediaIndex)
@@ -30,35 +31,28 @@ const ProjectLightbox: React.FC<ProjectLightboxProps> = ({ isOpen, onClose, proj
         onClose()
       }
     }
+
     // Close lightbox when pressing Escape key
     const handleEscKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         onClose()
       }
     }
+
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside)
       document.addEventListener("keydown", handleEscKey)
-
       // Prevent scrolling when lightbox is open
       document.body.style.overflow = "hidden"
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
-      document.addEventListener("keydown", handleEscKey)
+      document.removeEventListener("keydown", handleEscKey)
       // Restore scrolling when lightbox is closed
       document.body.style.overflow = ""
     }
   }, [isOpen, onClose])
-
-  // Reset video playback when changing videos
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.pause()
-      videoRef.current.currentTime = 0
-    }
-  }, [currentMediaIndex])
 
   if (!isOpen || !project) return null
 
@@ -82,8 +76,24 @@ const ProjectLightbox: React.FC<ProjectLightboxProps> = ({ isOpen, onClose, proj
     }
   }
 
-  const isVideo = (src: string) => {
-    return src.endsWith(".mp4")
+  // Render the appropriate media content
+  const renderMediaContent = () => {
+    if (currentMedia.type === "video") {
+      return (
+        <div className="w-full max-w-4xl">
+          <YouTubeEmbed src={currentMedia.src} title={currentMedia.alt} className="aspect-video" />
+        </div>
+      )
+    } else {
+      return (
+        <img
+          src={currentMedia.src}
+          alt={currentMedia.alt}
+          className="max-w-full max-h-[75vh] object-contain"
+          style={{ margin: "auto" }}
+        />
+      )
+    }
   }
 
   return (
@@ -106,26 +116,7 @@ const ProjectLightbox: React.FC<ProjectLightboxProps> = ({ isOpen, onClose, proj
         </div>
 
         <div className="bg-zinc-900 rounded-b-lg p-4 flex items-center justify-center relative">
-          {/* Render either image or video based on file extension */}
-          {isVideo(currentMedia.src) ? (
-            <video
-              ref={videoRef}
-              src={currentMedia.src}
-              className="max-w-full max-h-[75vh]"
-              controls
-              autoPlay
-              playsInline
-            >
-              Your browser does not support the video tag.
-            </video>
-          ) : (
-            <img
-              src={currentMedia.src}
-              alt={currentMedia.alt}
-              className="max-w-full max-h-[75vh] object-contain"
-              style={{ margin: "auto" }}
-            />
-          )}
+          {renderMediaContent()}
 
           {/* Navigation arrows (only show if there are multiple media items) */}
           {project.media.length > 1 && (
@@ -168,26 +159,15 @@ const ProjectLightbox: React.FC<ProjectLightboxProps> = ({ isOpen, onClose, proj
                   setCurrentMediaIndex(idx)
                 }}
               >
-                {isVideo(media.src) ? (
+                {media.type === "video" ? (
                   <div className="w-full h-full bg-zinc-700 flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-zinc-300"
-                    >
-                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    <svg className="w-8 h-8 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
                     </svg>
                   </div>
                 ) : (
                   <img
-                    src={media.src || "/placeholder.svg"}
+                    src={media.src}
                     alt={`Thumbnail ${idx + 1}`}
                     className="w-full h-full object-cover"
                   />

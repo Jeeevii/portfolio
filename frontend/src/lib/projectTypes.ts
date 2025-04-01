@@ -1,4 +1,4 @@
-export type MediaType = "image" | "video" | "pdf"
+export type MediaType = "image" | "video"
 
 export interface ProjectMedia {
   src: string

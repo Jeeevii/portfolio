@@ -6,7 +6,7 @@ import { Github, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import type { Project } from "@/lib/project"
+import type { Project } from "@/lib/projectTypes"
 
 interface ProjectCardProps {
   project: Project
@@ -14,45 +14,46 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbox }) => {
-  const isVideo = (src: string) => {
-    return src.endsWith(".mp4")
+  const firstMedia = project.media[0]
+
+  // Render the appropriate thumbnail based on media type
+  const renderThumbnail = () => {
+    if (firstMedia.type === "video") {
+      return (
+        <div className="h-full w-full bg-zinc-800 flex items-center justify-center relative">
+          <div className="absolute inset-0 opacity-50"></div>
+          <svg className="w-16 h-16 text-red-600 z-10" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+          </svg>
+          <span className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
+            Video
+          </span>
+        </div>
+      )
+    } else {
+      return (
+        <div className="h-full w-full bg-zinc-800 flex items-center justify-center relative">
+          <Image
+            src={firstMedia.src}
+            alt={firstMedia.alt}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <span className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
+            Image
+          </span>
+        </div>
+      )
+    }
   }
 
   return (
     <div className="bg-zinc-800/50 border border-zinc-700 rounded-lg overflow-hidden">
       <div className="relative h-48 w-full cursor-pointer group" onClick={() => onOpenLightbox(0)}>
-        {isVideo(project.media[0].src) ? (
-          <div className="h-full w-full bg-zinc-800 flex items-center justify-center relative">
-            <div className="absolute inset-0 bg-black opacity-50"></div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="48"
-              height="48"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-zinc-100 z-10"
-            >
-              <polygon points="5 3 19 12 5 21 5 3"></polygon>
-            </svg>
-            <span className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
-              Video
-            </span>
-          </div>
-        ) : (
-          <Image
-            src={project.media[0].src}
-            alt={project.media[0].alt}
-            fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-        )}
-        <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-          <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 px-3 py-1 rounded-md text-sm">
-            Click to View ({project.media.length} Items)
+        {renderThumbnail()}
+        <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center ">
+          <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 px-3 py-1 rounded-md text-sm mt-[-70px]">
+            View {project.media.length} Items
           </span>
         </div>
       </div>
@@ -69,7 +70,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbox }) =>
           </div>
         </div>
         <div className="flex space-x-3">
-        {project.githubLink && project.githubLink !== "N/A" ? (
+          {project.githubLink && project.githubLink !== "N/A" ? (
             <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"
@@ -90,6 +91,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbox }) =>
               Code
             </Button>
           )}
+
           {project.demoLink && project.demoLink !== "N/A" ? (
             <Link href={project.demoLink} target="_blank" rel="noopener noreferrer">
               <Button
