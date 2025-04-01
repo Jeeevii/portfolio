@@ -38,18 +38,18 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
       demoLink: "/docs/cse233_final_report.pdf",
       media: [
         {
-          src: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
-          alt: "Midterm Demo Video",
+          src: "https://www.youtube.com/watch?v=yFxkvYchXbo",
+          alt: "Final Demo Video",
           type: "video",
+        },
+        {
+          src: "/projects/carlaThumbnail.png",
+          alt: "Carla Violation",
+          type: "image",
         },
         {
           src: "/projects/cse233Graphifier.png",
           alt: "Visual Representation of Falsification",
-          type: "image",
-        },
-        {
-          src: "/projects/carlaCrash.png",
-          alt: "Carla Violation",
           type: "image",
         },
       ],
@@ -63,7 +63,7 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
       demoLink: "https://drive.google.com/file/d/13yVBUx2IcxoUuTJVpGvCxYbKIJIukH2q/view",
       media: [
         {
-          src: "https://www.youtube.com/watch?v=I89T7DH1dQ8",
+          src: "https://www.youtube.com/watch?v=Vz5GJUwyOkE",
           alt: "Body & Soul Offical Trailer",
           type: "video",
         },
