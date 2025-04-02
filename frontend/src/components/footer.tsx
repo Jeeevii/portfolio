@@ -23,7 +23,7 @@ const Footer: React.FC<FooterProps> = () => {
               <Linkedin className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
-            <Link href="/docs/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-zinc-300">
+            <Link href="/docs/resume_spring2025.pdf" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-zinc-300">
               <FileText className="h-5 w-5" />
               <span className="sr-only">Resume</span>
             </Link>

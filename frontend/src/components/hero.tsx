@@ -61,7 +61,7 @@ const Hero: React.FC<HeroProps> = () => {
               <span className="text-zinc-400 font-medium">LinkedIn</span>
             </div>
           </Link>
-          <Link href="/docs/resume.pdf" target="_blank" rel="noopener noreferrer">
+          <Link href="/docs/resume_spring2025.pdf" target="_blank" rel="noopener noreferrer">
             <div className="flex flex-col items-center space-y-2">
               <div className="rounded-full h-20 w-20 flex items-center justify-center bg-zinc-800 border-2 border-zinc-700 hover:border-zinc-500 hover:bg-zinc-700 transition-all duration-300 p-4">
                 <svg

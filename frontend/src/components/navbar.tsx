@@ -40,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                 <span className="hidden sm:inline">Contact</span>
               </Button>
             </Link>
-            <Link href="/docs/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <Link href="/docs/resume_spring2025.pdf" target="_blank" rel="noopener noreferrer">
               <Button 
                 className="bg-zinc-700 hover:bg-zinc-600 text-zinc-100 transition-all"
                 style={{ cursor: 'pointer' }}>
