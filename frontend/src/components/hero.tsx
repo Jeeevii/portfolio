@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = () => {
         </h1>
         <p className="text-2xl md:text-3xl text-zinc-400 mb-8">Backend Developer & Full Stack Engineer</p>
           <p className="text-xl text-zinc-500 mb-12 max-w-2xl mx-auto">
-            Hey, I'm a CS student at UC Santa Cruz who loves building full-stack apps with focus on backend development, seeking entry-level roles and internships to grow and build impactful systems.
+            Hey, I'm a CS student at UC Santa Cruz who loves building full-stack apps with focus on backend development, seeking entry-level roles and internships to grow and gain more industry experience.
           </p>
         <div
           className={cn(

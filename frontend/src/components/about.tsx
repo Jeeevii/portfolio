@@ -35,7 +35,7 @@ const About: React.FC<AboutProps> = () => {
               I thrive best in environments where I can get direct feedback to get things done without sugar-coating the challenges. 
             </p>
             <p className="text-zinc-400">
-              Outside the screen, you’ll probably find me on the basketball court, at the gym, or out fishing. I also love gaming with friends and solving leetcode problems...because what’s more fun than debugging at 2 AM? 
+              Outside the screen, you’ll probably find me on the basketball court, at the gym, or out fishing. I also love gaming with friends and solving leetcode problems...because at this point, NeetCode’s voice is my internal monologue. 
               Powered by too much caffeine and an unhealthy love for White Monster, I’m always up for a challenge, whether it’s in code, competition, or life.
             </p>
           </div>
