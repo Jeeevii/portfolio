@@ -31,7 +31,7 @@ const Skills = () => {
     {
       title: "AI & ML Development",
       icon: <Bot  className="h-5 w-5" />, 
-      skills: ["LangChain", "LlamaIndex",, "NumPy", "CARLA", "Scenic"],
+      skills: ["LangChain", "LlamaIndex", "NumPy", "CARLA", "Scenic"],
     },
     {
       title: "OS & Networking",
@@ -68,10 +68,13 @@ const Skills = () => {
               {category.skills.map((skill, skillIndex) => (
                 <div
                   key={skillIndex}
-                  className="flex flex-col items-center bg-zinc-700/50 rounded-lg p-3 hover:bg-zinc-700 transition-colors"
-                >
+                  className="flex flex-col items-center bg-zinc-700/50 rounded-lg p-3 hover:bg-zinc-700 transition-colors">
                   <div className="w-10 h-10 flex items-center justify-center mb-2">
-                    <img src={`/icons/${skill.toLowerCase().replace(/[^a-z0-9]/g, "")}.svg`} alt={skill} className="w-8 h-8" />
+                    <img 
+                      src={skill ? `/icons/${skill.toLowerCase().replace(/[^a-z0-9]/g, "")}.svg` : "/globals.svg"} 
+                      alt={skill || "unknown skill"} 
+                      className="w-8 h-8" 
+                    />                  
                   </div>
                   <span className="text-sm text-zinc-300 text-center">{skill}</span>
                 </div>

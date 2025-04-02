@@ -13,7 +13,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="#home" className="text-xl font-bold tracking-tighter">
         {/*className="object-contain h-12 w-auto" */}
-          <Image src="/gif/jeevi_enlargedLogo.gif" alt="Jeevi Logo" width={90} height={120}></Image>
+          <Image src="/gif/jeevi_enlargedLogo.gif" alt="Jeevi Logo" width={90} height={120} className="unoptimized"></Image>
           {/* <span className="text-zinc-300">J</span>
           <span className="text-zinc-500">M</span> */}
         </Link>
