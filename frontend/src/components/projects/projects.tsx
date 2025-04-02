@@ -67,9 +67,9 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
           alt: "Body & Soul Offical Trailer",
           type: "video",
         },
-        { src: "/projects/mainPhase.png", alt: "Main Screen", type: "image" },
-        { src: "/projects/combatPhase.png", alt: "Combat Phase", type: "image" },
-        { src: "/projects/upgradePhase.png", alt: "Upgrade Phase", type: "image" },
+        { src: "/projects/MainPhase.png", alt: "Main Screen", type: "image" },
+        { src: "/projects/CombatPhase.png", alt: "Combat Phase", type: "image" },
+        { src: "/projects/UpgradePhase.png", alt: "Upgrade Phase", type: "image" },
       ],
     },
     {
@@ -81,12 +81,12 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
       demoLink: "N/A",
       media: [
         {
-          src: "/projects/slugRush.png",
+          src: "/projects/slugrush.png",
           alt: "SlugRush Daily View",
           type: "image",
         },
         {
-          src: "/projects/slugRush2.png",
+          src: "/projects/slugrush2.png",
           alt: "SlugRush Weekly View",
           type: "image",
         },
