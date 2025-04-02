@@ -21,6 +21,7 @@ const DecryptButton = () => {
   }, []);
 
   useEffect(() => {
+    // decryptText();
     return () => clearInterval(intervalRef.current);
   }, []);
 
@@ -47,7 +48,7 @@ const DecryptButton = () => {
     <motion.button
       whileHover={{ scale: 1.025 }}
       whileTap={{ scale: 0.975 }}
-      onMouseEnter={decryptText}
+      onMouseOver={decryptText}
       className="group relative overflow-hidden rounded-lg border-[1px] border-zinc-500 bg-zinc-700 px-4 py-2 font-mono font-medium text-neutral-300 transition-colors hover:text-indigo-300"
       style={{ cursor: 'pointer' }}
     >

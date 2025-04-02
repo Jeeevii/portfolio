@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import {Mail, FileText} from "lucide-react"
+import Logo from "./logo"
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface NavbarProps {}
 
@@ -11,9 +11,9 @@ const Navbar: React.FC<NavbarProps> = () => {
   return (
     <header className="fixed top-0 w-full bg-zinc-900/80 backdrop-blur-sm z-50 border-b border-zinc-800">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="#home" className="text-xl font-bold tracking-tighter">
-        {/*className="object-contain h-12 w-auto" */}
-          <Image src="/gif/Jeevi_enlargedLogo.gif" alt="Jeevi Logo" width={90} height={120} unoptimized></Image>
+        <Link href="#hero" className="text-xl font-bold tracking-tighter">
+          {/*className="object-contain h-12 w-auto" */}
+          <Logo/>
           {/* <span className="text-zinc-300">J</span>
           <span className="text-zinc-500">M</span> */}
         </Link>
@@ -21,11 +21,11 @@ const Navbar: React.FC<NavbarProps> = () => {
           <Link href="#about" className="text-zinc-400 hover:text-zinc-100 transition-colors">
             About
           </Link>
-          <Link href="#skills" className="text-zinc-400 hover:text-zinc-100 transition-colors">
-            Skills
-          </Link>
           <Link href="#projects" className="text-zinc-400 hover:text-zinc-100 transition-colors">
             Projects
+          </Link>
+          <Link href="#skills" className="text-zinc-400 hover:text-zinc-100 transition-colors">
+            Skills
           </Link>
           <div className="flex items-center space-x-3">
             <Link

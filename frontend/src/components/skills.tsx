@@ -16,12 +16,12 @@ const Skills = () => {
     {
       title: "Frontend Development",
       icon: <PanelTop className="h-5 w-5" />, 
-      skills: ["Next.js", "React", "Angular", "Tailwind CSS", "Figma"],
+      skills: ["Next.js", "Angular", "Tailwind CSS", "Figma"],
     },
     {
       title: "Backend Development",
       icon: <Server className="h-5 w-5" />, 
-      skills: ["Node.js", "Flask", "Python", "C/C++"],
+      skills: ["Flask", "FastAPI", "Node.js", "C/C++"],
     },
     {
       title: "Databases & Cloud",
@@ -31,17 +31,17 @@ const Skills = () => {
     {
       title: "AI & ML Development",
       icon: <Bot  className="h-5 w-5" />, 
-      skills: ["LangChain", "LlamaIndex", "NumPy", "CARLA", "Scenic"],
-    },
-    {
-      title: "OS & Networking",
-      icon: <Terminal className="h-5 w-5" />, 
-      skills: [ "Mininet", "Git", "Linux", "WireShark", "Bash"],
+      skills: ["LangChain", "LlamaIndex", "CARLA", "Scenic"],
     },
     {
       title: "Game Development",
       icon: <Gamepad className="h-5 w-5" />, 
-      skills: ["Unity", "Phaser", "Photon", "C#", "Typescript"],
+      skills: ["Unity", "Photon", "C#", "Phaser"],
+    },
+    {
+      title: "Development & Security Tools",
+      icon: <Terminal className="h-5 w-5" />, 
+      skills: ["Git", "Linux", "Ghidra", "WireShark", "Mininet", "Bash"],
     },
   ];
 

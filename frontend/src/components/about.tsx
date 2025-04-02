@@ -35,13 +35,12 @@ const About: React.FC<AboutProps> = () => {
               I thrive best in environments where I can get direct feedback to get things done without sugar-coating the challenges. 
             </p>
             <p className="text-zinc-400">
-              Outside the screen, you’ll probably find me on the basketball court, at the gym, or out fishing. I also love gaming with friends and solving leetcode problems...because at this point, NeetCode’s voice is my internal monologue. 
-              Powered by too much caffeine and an unhealthy love for White Monster, I’m always up for a challenge, whether it’s in code, competition, or life.
+              Outside the screen, you’ll probably find me on the basketball court, at the gym, or out fishing. I also love gaming with friends to wind down, and, of course, solving LeetCode problems...because at this point, NeetCode’s voice is my internal monologue. 
+              Fueled by too much caffeine and an unhealthy love for White Monster, I’m always up for a challenge, whether it’s in code, sports, or everyday life.
             </p>
           </div>
           <div className="relative h-80 w-full rounded-lg overflow-hidden border border-zinc-800">
-            <Image src="/projects/tonyCat.jpg" alt="Developer portrait" fill className="object-cover" />
-            <p>My Cat</p>
+            <Image src="/projects/tonyCat.jpg" alt="My Cat Tony" fill className="object-cover" />
           </div>
         </div>
     </section>

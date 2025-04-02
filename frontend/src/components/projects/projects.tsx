@@ -32,7 +32,7 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
     {
       title: "Falsification of Autonomous Driving Stacks",
       description:
-        "Research utilizing the CARLA driving simulator running on WSL for conducting autonomous vehicle testing. We focused on determining which initial parameters, such as speed and distance between the ego vehicle and the driving stack, led to the most violations and crashes. Additionally, introduced ChatScene, an LLM focused on creating scenarios to generate custom Scenic scripts for running targeted safety tests.",
+        "Research utilizing the CARLA driving simulator running wuth WSL for conducting autonomous vehicle testing. Focused on determining which initial parameters, such as speed and distance between the ego vehicle and the driving stack, led to the most violations and crashes. Additionally, introduced ChatScene, an LLM focused on creating scenarios to generate custom Scenic scripts for running targeted safety tests.",
       technologies: ["Python", "CARLA", "Scenic", "VerifAI", "ChatScene"],
       githubLink: "https://github.com/Jeeevii/cse233_acc_verifai",
       demoLink: "/docs/cse233_final_report.pdf",
@@ -57,7 +57,7 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
     {
       title: "Body and Soul",
       description:
-        "A 2v2 online MOBA developed in Unity 6, where players are bound by a tether, with only the most coordinated team makes it out alive. Built with Photon for multiplayer, the game features skill-based combat and progression. My focus was on designing the upgrade system, implementing various skills, and facilitating the entire project as Scrum Master.",
+        "A 2v2 online MOBA developed in Unity 6, where players are bound by a tether, with only the most coordinated team will achieve victory. Built with Photon for multiplayer, the game features skill-based combat and progression. My focus was on designing the upgrade system, implementing various skills, and facilitating the entire project as Scrum Master.",
       technologies: ["Unity", "Photon", "C#", "Scrum Methodology"],
       githubLink: "N/A",
       demoLink: "https://drive.google.com/file/d/13yVBUx2IcxoUuTJVpGvCxYbKIJIukH2q/view",
