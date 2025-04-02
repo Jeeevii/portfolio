@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import {Mail, FileText} from "lucide-react"
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface NavbarProps {}
@@ -12,7 +12,8 @@ const Navbar: React.FC<NavbarProps> = () => {
     <header className="fixed top-0 w-full bg-zinc-900/80 backdrop-blur-sm z-50 border-b border-zinc-800">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="#home" className="text-xl font-bold tracking-tighter">
-          <img src="/gif/jeevi_enlargedLogo.gif" alt="Jeevi Logo" className="object-contain h-14 w-auto"></img>
+        {/*className="object-contain h-12 w-auto" */}
+          <Image src="/gif/jeevi_enlargedLogo.gif" alt="Jeevi Logo" width={90} height={120}></Image>
           {/* <span className="text-zinc-300">J</span>
           <span className="text-zinc-500">M</span> */}
         </Link>

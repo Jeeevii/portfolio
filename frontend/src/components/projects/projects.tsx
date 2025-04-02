@@ -120,7 +120,7 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
         <ProjectCarousel projects={projects} onOpenLightbox={openLightbox} />
       </section>
 
-      {/* Use the separate ProjectLightbox component */}
+      {/* lightbox component with seperate arrows and image navigiation */}
       {lightboxOpen && (
         <ProjectLightbox
           isOpen={lightboxOpen}

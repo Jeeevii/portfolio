@@ -24,7 +24,7 @@ const ProjectLightbox: React.FC<ProjectLightboxProps> = ({ isOpen, onClose, proj
     setCurrentMediaIndex(initialMediaIndex)
   }, [initialMediaIndex, project])
 
-  // Close lightbox when clicking outside the content
+  // close with clicking outside the content
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
@@ -32,7 +32,7 @@ const ProjectLightbox: React.FC<ProjectLightboxProps> = ({ isOpen, onClose, proj
       }
     }
 
-    // Close lightbox when pressing Escape key
+    // close lightbox when pressing Esc key
     const handleEscKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         onClose()
@@ -42,14 +42,14 @@ const ProjectLightbox: React.FC<ProjectLightboxProps> = ({ isOpen, onClose, proj
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside)
       document.addEventListener("keydown", handleEscKey)
-      // Prevent scrolling when lightbox is open
+      // prevent scrolling when lightbox is open
       document.body.style.overflow = "hidden"
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
       document.removeEventListener("keydown", handleEscKey)
-      // Restore scrolling when lightbox is closed
+      // restore scrolling when lightbox is closed
       document.body.style.overflow = ""
     }
   }, [isOpen, onClose])
@@ -63,7 +63,7 @@ const ProjectLightbox: React.FC<ProjectLightboxProps> = ({ isOpen, onClose, proj
     if (currentMediaIndex < project.media.length - 1) {
       setCurrentMediaIndex(currentMediaIndex + 1)
     } else {
-      setCurrentMediaIndex(0) // Loop back to the first media
+      setCurrentMediaIndex(0) // loop back to the first media
     }
   }
 
@@ -72,11 +72,11 @@ const ProjectLightbox: React.FC<ProjectLightboxProps> = ({ isOpen, onClose, proj
     if (currentMediaIndex > 0) {
       setCurrentMediaIndex(currentMediaIndex - 1)
     } else {
-      setCurrentMediaIndex(project.media.length - 1) // Loop to the last media
+      setCurrentMediaIndex(project.media.length - 1) 
     }
   }
 
-  // Render the appropriate media content
+  // render based off media type
   const renderMediaContent = () => {
     if (currentMedia.type === "video") {
       return (
@@ -118,7 +118,7 @@ const ProjectLightbox: React.FC<ProjectLightboxProps> = ({ isOpen, onClose, proj
         <div className="bg-zinc-900 rounded-b-lg p-4 flex items-center justify-center relative">
           {renderMediaContent()}
 
-          {/* Navigation arrows (only show if there are multiple media items) */}
+          {/* navigation arrows (only show if there are multiple media items) */}
           {project.media.length > 1 && (
             <>
               <Button
@@ -145,7 +145,7 @@ const ProjectLightbox: React.FC<ProjectLightboxProps> = ({ isOpen, onClose, proj
           )}
         </div>
 
-        {/* Thumbnail navigation */}
+        {/* thumbnail navigation */}
         {project.media.length > 1 && (
           <div className="bg-zinc-800 p-3 mt-2 rounded-lg flex justify-center space-x-2 overflow-x-auto">
             {project.media.map((media, idx) => (

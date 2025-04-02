@@ -10,7 +10,7 @@ interface YouTubeEmbedProps {
   className?: string
 }
 
-// Helper function to extract YouTube ID from various YouTube URL formats
+// helper to extract YouTube ID from YouTube URL 
 export const getYoutubeId = (url: string): string | null => {
   // Handle different YouTube URL formats
   const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/

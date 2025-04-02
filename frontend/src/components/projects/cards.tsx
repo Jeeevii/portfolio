@@ -16,7 +16,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbox }) => {
   const firstMedia = project.media[0]
 
-  // Render the appropriate thumbnail based on media type
+  // thumbnail render based on media type
   const renderThumbnail = () => {
     if (firstMedia.type === "video") {
       return (
@@ -48,11 +48,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbox }) =>
   }
 
   return (
+    // showcase first image if image mediaType, or youtube emblem
     <div className="bg-zinc-800/50 border border-zinc-700 rounded-lg overflow-hidden">
       <div className="relative h-48 w-full cursor-pointer group" onClick={() => onOpenLightbox(0)}>
         {renderThumbnail()}
         <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center ">
-          <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 px-3 py-1 rounded-md text-sm mt-[-70px]">
+          <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 px-3 py-1 rounded-md text-sm mt-[80px]">
             View {project.media.length} Items
           </span>
         </div>
