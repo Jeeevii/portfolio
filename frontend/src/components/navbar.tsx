@@ -42,14 +42,14 @@ const Navbar: React.FC<NavbarProps> = () => {
             >
               <Button
                 variant="outline"
-                className="border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-300 hover:border-zinc-600 transition-all"
+                className="border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-300 hover:border-zinc-600 transition-all cursor-pointer"
               >
                 <Mail className="h-4 w-4" />
                 <span className="hidden sm:inline">Contact</span>
               </Button>
             </Link>
             <Link href="/docs/resume_spring2025.pdf" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-zinc-700 hover:bg-zinc-600 text-zinc-100 transition-all">
+              <Button className="bg-zinc-700 hover:bg-zinc-600 text-zinc-100 transition-all cursor-pointer">
                 <FileText className="h-4 w-4" />
                 <span className="hidden sm:inline">Resume</span> 
               </Button>
