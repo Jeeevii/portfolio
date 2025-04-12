@@ -93,6 +93,41 @@ const Projects: React.FC<ProjectsProps> = ({ isLoaded }) => {
       ],
     },
     {
+      title: "Portfolio Website",
+      description:
+        "A fast and responsive personal portfolio website built with Next.js to showcase my work and skills",
+      technologies: ["Next.js", "Vercel"],
+      githubLink: "https://github.com/Jeeevii/portfolio",
+      demoLink: "https://jeevithanmahenthran.com",
+      media: [
+        {
+          src: "/projects/mobile.png",
+          alt: "Portfolio Mobile View",
+          type: "image",
+        },
+        {
+          src: "/projects/hero.png",
+          alt: "Portfolio Main Section",
+          type: "image",
+        },
+        {
+          src: "/projects/bio.png",
+          alt: "Portfolio About Me Section",
+          type: "image",
+        },
+        {
+          src: "/projects/projects.png",
+          alt: "Portfolio Projects Section",
+          type: "image",
+        },
+        {
+          src: "/projects/skills.png",
+          alt: "Portfolio Skills Section",
+          type: "image",
+        },
+      ],
+    },
+    {
       title: "WP.GG (Riot Stats Checker)",
       description:
         "A simple full-stack project which uses Riot Game's Public API to access user data, such as win rate, champion mastery, match data, etc. Built with HTML/CSS and Express.js, with the backend hosted on Firebase. Unfortunately, the Riot Games API documentation has been updated, and our version is no longer compatible with the latest changes.",
