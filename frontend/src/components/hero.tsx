@@ -84,9 +84,7 @@ const Hero: React.FC<HeroProps> = () => {
             </div>
           </Link>
         </div>
-          <Link href="#projects" rel="noopener noreferrer" >
-            <DecryptButton />
-          </Link>
+          <DecryptButton />
       </div>
     </section>
   );

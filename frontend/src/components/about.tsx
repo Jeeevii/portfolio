@@ -36,7 +36,7 @@ const About: React.FC<AboutProps> = () => {
             </p>
             <p className="text-zinc-400">
               Outside the screen, you’ll probably find me on the basketball court, at the gym, or out fishing. I also love gaming with friends to wind down, and, of course, solving LeetCode problems...because at this point, NeetCode’s voice is my internal monologue. 
-              Fueled by too much caffeine and an unhealthy love for White Monster, I’m always up for a challenge, whether it’s in code, sports, or everyday life.
+              Currently in an arguably overcommitted relationship with White Monster, I’m always up for a challenge, whether it’s in code, on the court, or in everyday life.
             </p>
           </div>
           <div className="relative h-80 w-full rounded-lg overflow-hidden border border-zinc-800">
