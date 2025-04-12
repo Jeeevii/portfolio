@@ -24,7 +24,16 @@ const Navbar: React.FC<NavbarProps> = () => {
         </Link>
         
         {/* desktop view */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-6">
+          <Link href="#about" className="text-zinc-400 hover:text-zinc-100 transition-colors">
+            <span className="hidden sm:inline">About</span>
+          </Link>
+          <Link href="#projects" className="text-zinc-400 hover:text-zinc-100 transition-colors">
+            <span className="hidden sm:inline">Projects</span>
+          </Link>
+          <Link href="#skills" className="text-zinc-400 hover:text-zinc-100 transition-colors">
+            <span className="hidden sm:inline">Skills</span>
+          </Link>
           <div className="flex items-center space-x-3">
             <Link
               href="https://mail.google.com/mail/?view=cm&fs=1&to=jeevithanmahenthran@gmail.com"
@@ -42,18 +51,17 @@ const Navbar: React.FC<NavbarProps> = () => {
             <Link href="/docs/resume_spring2025.pdf" target="_blank" rel="noopener noreferrer">
               <Button className="bg-zinc-700 hover:bg-zinc-600 text-zinc-100 transition-all">
                 <FileText className="h-4 w-4" />
-                <span className="hidden sm:inline">Resume</span>
+                <span className="hidden sm:inline">Resume</span> 
               </Button>
             </Link>
+            {/* mobile view (hamburger toggle) */}
+            <button
+              className="sm:hidden text-zinc-300"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
-
-          {/* mobile view (hamburger toggle) */}
-          <button
-            className="sm:hidden text-zinc-300"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
         </div>
       </div>
 
@@ -73,7 +81,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           </div>
         </div>
       )}
-      
+
     </header>
   );
 };
